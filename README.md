@@ -19,7 +19,7 @@ El siguiente diagrama representa la relación entre los componentes principales:
 
 
 # Base de Datos
-
 Esta API utiliza MySQL en XAMPP como base de datos. La conexión se establece mediante el paquete mysql2 en Node.js.
+La base de datos esta en el archivo receta_db.sql.
 
 Se usa Postman para probar los endpoints y verificar su funcionamiento.
