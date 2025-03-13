@@ -18,6 +18,7 @@ const loginRoutes = require('./routes/loginRoutes');
 const recetaRoutes = require('./routes/recetaRoutes');
 const comentarioRoutes = require('./routes/comentarioRoutes');
 const meGustaRoutes = require('./routes/megustaRoutes');
+const passwordRoutes = require('./routes/passwordRoutes');
 
 // Usar las rutas
 app.use('/cuenta', cuentaRoutes);
@@ -25,6 +26,7 @@ app.use('/login', loginRoutes);
 app.use('/receta', recetaRoutes);
 app.use('/comentario', comentarioRoutes);
 app.use('/me_gusta', meGustaRoutes);
+app.use('/auth', passwordRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
