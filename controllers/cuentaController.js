@@ -14,7 +14,15 @@ exports.createCuenta = async (req, res) => {
   if (password !== confirmPassword) {
     return res.status(400).json({ error: "Las contraseñas no coinciden" });
   }
-  
+
+  // Expresión regular para validar la contraseña (mínimo una mayúscula, una minúscula y un número)
+  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/;
+  if (!passwordRegex.test(password)) {
+    return res.status(400).json({
+      error: "La contraseña debe contener al menos una letra mayúscula, una letra minúscula y un número",
+    });
+  }
+
   try {
     // Hashear la contraseña
     const saltRounds = 10;

@@ -15,7 +15,7 @@ router.get('/explorar', recetaController.getExplorarRecetas);
 // Mis recetas (público, pero usualmente se filtra por el usuario autenticado)
 router.get('/mis-recetas/:userId', recetaController.getMisRecetas);
 
-// Rutas dinámicas (protege según tu necesidad)
+// Rutas dinámicas
 router.get('/:id', recetaController.getRecetaById);
 router.put('/:id', authMiddleware, recetaController.updateReceta);
 router.delete('/:id', authMiddleware, recetaController.deleteReceta);
